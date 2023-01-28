@@ -1,7 +1,29 @@
+import Post from '@/components/Post'
 import Head from 'next/head'
-import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState(false);
+
+  const handleLoad = async () => {
+    try {
+      const res = await fetch("/api/posts", {
+        method: "GET",
+      })
+      console.log(res);
+      if (res.status === 200) {
+        const data = await res.json();
+        setPosts(data);
+      }
+    } catch (e) {
+      setError(true)
+    }
+  }
+
+  useEffect(() => {
+    handleLoad();
+  }, [])
   return (
     <>
       <Head>
@@ -11,8 +33,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='md:container mx-auto'>
-        <div className='text-2xl text-center mt-4'>Are you ready to make this into a functioning site?</div>
-        <Image className="px-4 mx-auto mt-4" src="https://img.memegenerator.net/instances/55208503.jpg" alt="Meme" width={500} height={500} />
+        <div className='text-2xl text-center my-4'>Simple Social App</div>
+        {posts?.map((post, index) => <Post key={index} post={post} />)}
+        {error && <h1 className='text-red-100'>An error occurred.</h1>}
       </main>
     </>
   )
