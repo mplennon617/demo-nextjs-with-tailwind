@@ -1,6 +1,6 @@
-import Post from '@/components/Post'
-import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import Post from "@/components/Post";
+import Head from "next/head";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -10,20 +10,20 @@ export default function Home() {
     try {
       const res = await fetch("/api/posts", {
         method: "GET",
-      })
+      });
       console.log(res);
       if (res.status === 200) {
         const data = await res.json();
         setPosts(data);
       }
     } catch (e) {
-      setError(true)
+      setError(true);
     }
-  }
+  };
 
   useEffect(() => {
     handleLoad();
-  }, [])
+  }, []);
   return (
     <>
       <Head>
@@ -32,11 +32,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='md:container mx-auto'>
-        <div className='text-2xl text-center my-4'>Simple Social App</div>
-        {posts?.map((post, index) => <Post key={index} post={post} />)}
-        {error && <h1 className='text-red-100'>An error occurred.</h1>}
+      <main className="md:container mx-auto">
+        <div className="text-2xl text-center my-4">Simple Social App</div>
+        {posts?.map((post, index) => (
+          <Post key={index} post={post} />
+        ))}
+        {error && <h1 className="text-red-100">An error occurred.</h1>}
       </main>
     </>
-  )
+  );
 }

@@ -3,7 +3,7 @@ import clientPromise from "@/lib/db"
 export default async function handler(req, res) {
     try {
         const client = await clientPromise;
-        const db = client.db("web_demo");
+        const db = client.db("webdesign-workshop");
 
         switch (req.method) {
             case "GET":
