@@ -5,14 +5,13 @@ import { useEffect, useState } from "react";
 // This is our Home component.
 // In Next.js, this is our main page (http://localhost:3000)
 export default function Home() {
-
   // Declare our state variables:
   // - The `posts` state variable will be populated with the data from the API.
   // - The `body` and `author` state variables are set to whatever the user enters in the text boxes.
   // - The `error` state variable is a flag that we set to true if anything goes wrong.
   const [posts, setPosts] = useState([]);
-  const [body, setBody] = useState('');
-  const [author, setAuthor] = useState('');
+  const [body, setBody] = useState("");
+  const [author, setAuthor] = useState("");
   const [error, setError] = useState(false);
 
   // handleLoad function. Called from the useEffect()
@@ -52,6 +51,11 @@ export default function Home() {
       </Head>
       <main className="md:container mx-auto">
         <div className="text-2xl text-center my-4">Blog Post App</div>
+        {/* TODO: Button should route to /new */}
+        {/* TODO: Remind yourself how routers work in Next.js! */}
+        <button className="float-right">New Post</button>
+         {/* Here, posts?.map iterates through each post, 
+         and generates a Post component with the current post data. */}
         {posts?.map((post, index) => (
           <Post key={index} post={post} />
         ))}
