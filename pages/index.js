@@ -2,28 +2,46 @@ import Post from "@/components/Post";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 
+// This is our Home component.
+// In Next.js, this is our main page (http://localhost:3000)
 export default function Home() {
+
+  // Declare our state variables:
+  // - The `posts` state variable will be populated with the data from the API.
+  // - The `body` and `author` state variables are set to whatever the user enters in the text boxes.
+  // - The `error` state variable is a flag that we set to true if anything goes wrong.
   const [posts, setPosts] = useState([]);
+  const [body, setBody] = useState('');
+  const [author, setAuthor] = useState('');
   const [error, setError] = useState(false);
 
+  // handleLoad function. Called from the useEffect()
   const handleLoad = async () => {
     try {
       const res = await fetch("/api/posts", {
         method: "GET",
       });
       console.log(res);
+      // If the HTTP response is successful, we extract the data (in JSON format)
+      // and update our posts state variable with the data.
       if (res.status === 200) {
         const data = await res.json();
         setPosts(data);
       }
     } catch (e) {
+      // If the HTTP response fails, it will throw an exception.
+      // We catch it, and update the state variable to let the user know something went wrong.
       setError(true);
     }
   };
 
+  // useEffect() - runs whenever this component renders or updates
+  // - we call handleLoad(), which gets the posts from the API and updates the `posts` state variable.
   useEffect(() => {
     handleLoad();
   }, []);
+
+  // Component contents. Note the JavaScript logic injected in curly braces {}
   return (
     <>
       <Head>
@@ -33,7 +51,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="md:container mx-auto">
-        <div className="text-2xl text-center my-4">Simple Social App</div>
+        <div className="text-2xl text-center my-4">Blog Post App</div>
         {posts?.map((post, index) => (
           <Post key={index} post={post} />
         ))}
