@@ -18,6 +18,7 @@ export default function NewPost() {
     console.log("handleSubmit called");
     // ***TODO: Using fetch, send a POST request to the API.***
     // Place the body, author, and title into a JSON object to send back.
+    //        For reference: headers: { 'Content-Type': 'application/json' }
     
     // ***TODO: Uncomment below when done***
     // push("/");
