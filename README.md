@@ -1,34 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Web Development Workshop: HackSMU 2020
+This repository holds the materials and code for the intro to web development workshop @ HackSMU V (Fall 2023). In this workshop, we will cover how to create a simple full-stack blog web application using `Next.js 12` and `MongoDB`.
 
-## Getting Started
+For the sake of time, there is an incomplete (initial) version of the code, which we will use in the demo and build up to a completed project. The completed version is also included in this repository for anyone who wants to come back and take a look. 
 
-First, run the development server:
+You can access the completed code by running `git checkout endofsession`.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- To see all of the available branches (versions of the code), run `git branch -a`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Setup (Do prior to the Workshop)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Prerequisites
+You must have the following things installed on your laptop prior to the workshop for the interactive coding portion:
+* Node.js (Installation: https://nodejs.org/en/download/current) 
+    * (check if you have this by running `node -v` in your command prompt)
+* Git (Installation: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* MongoDB Community Edition (Installation: https://docs.mongodb.com/manual/administration/install-community/)
+* A code editor or IDE (VSCode, Sublime Text, Atom, etc.)
+    * For this workshop, I will be using [VSCode.](https://code.visualstudio.com/download)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Setup Application
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### General
+1. Open a command prompt (cmd.exe on Windows; Terminal on Mac/Linux)
+2. Clone the repository: `git clone https://github.com/mplennon617/hacksmuv-webdev.git`.
+3. Open the cloned codebase on your IDE
+    * in VSCode you can do this straight from the terminal: `code .` (Don't forget the period)
 
-## Learn More
+### Next.js Application
 
-To learn more about Next.js, take a look at the following resources:
+### MongoDB
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+TODO: NEED TO ADD INSTRUCTIONS ON HOW TO CREATE YOUR OWN MONGODB DATABASE
+AND CREATE YOUR OWN ENV.LOCAL
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Run `mongod --config /usr/local/etc/mongod.conf --fork` to start MongoDB manually as a background process.
+    * On MacOS, you may have some issues with missing directory `/data/db` or insufficient permissions. To fix this, use the following commands:
+        - `sudo mkdir -p /System/Volumes/Data/data/db`
+        - `sudo chown -R `id -un` /System/Volumes/Data/data/db`
+        - `mongod --config /usr/local/etc/mongod.conf --fork --dbpath=/System/Volumes/Data/data/db`
 
-## Deploy on Vercel
+CHECKPOINT: Run `ps -x | grep mongo` in a terminal. You should see a `mongod` process running if you did your database setup correctly!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Start Coding!
+At this point, you are good to go for the workshop! See you there!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### References Used
+* https://www.positronx.io/react-mern-stack-crud-app-tutorial/
+* https://medium.com/@arijit_chowdhury/basic-crud-app-setup-with-react-node-js-express-mysql-5e097e1145ff
+
+# Workshop Materials
+
+# Additional References
+
+* Next.js 13
+    * Amazing [video](https://www.youtube.com/watch?v=NgayZAuTgwM&t=347s) by Web Dev Simplified: https://www.youtube.com/watch?v=NgayZAuTgwM&t=347s
+    * [CodeBase](https://github.com/WebDevSimplified/n...) (You can use this as a starter project): https://github.com/WebDevSimplified/n...
+    * It's a new version of Next.js that came out last year, and it's pretty sweet...
+    * There's a lot of changes, but one of the most notable changes is *server side components.* With Next.js 13, you can create frontend components that render on the server side. The server sends static HTML/CSS/JS to the client.
+
+* Tailwind Documentation
+    *
+
+* Deploying your Next.js application on Vercel
+    * Video: https://www.youtube.com/watch?v=2HBIzEx6IZA
+    * Vercel is a website hosting service that allows you to instantly deploy websites on the cloud. 
+    * Since Next.js is made by the same company as Vercel, Next.js integrates with Vercel very well. A great option for deploying your HackSMU app.
