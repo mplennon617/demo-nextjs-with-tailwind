@@ -1,4 +1,3 @@
-import Post from "@/components/Post";
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -37,11 +36,7 @@ export default function Home() {
     }
   };
 
-  // useEffect() - runs whenever this component renders or updates
-  // - we call handleLoad(), which gets the posts from the API and updates the `posts` state variable.
-  useEffect(() => {
-    handleLoad();
-  }, []);
+  // ***TODO: Call handleLoad() as soon as the component renders.***
 
   // Component contents. Note the JavaScript logic injected in curly braces {}
   return (
@@ -61,10 +56,24 @@ export default function Home() {
         >
           New Post
         </Link>
-        {/* Here, posts?.map iterates through each post, 
-         and generates a Post component with the current post data. */}
-        {posts.length > 0 ? (
-          posts?.map((post, index) => <Post key={index} post={post} />)
+
+        {/* ***TODO: Map through every post fetched from the database (instead of just one).*** */}
+        {posts[0] ? (
+          <>
+            {/* HTML for a single post */}
+            <div className="bg-stone-700 w-[50rem] mx-auto p-4 mb-4 rounded">
+              <div className="text-white text-xl font-bold mb-4">
+                <h2 className="text-white text-2xl font-bold">
+                  {" "}
+                  "{posts[0].title}" by {posts[0].author}
+                </h2>
+              </div>
+              <p className="text-white">{posts[0].body}</p>
+            </div>
+            <p className="text-center font-bold">
+              (Additional posts not yet rendered)
+            </p>
+          </>
         ) : (
           <p className="text-center">No posts yet!</p>
         )}

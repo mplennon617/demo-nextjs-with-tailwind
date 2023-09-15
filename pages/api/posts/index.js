@@ -6,7 +6,7 @@ import clientPromise from "@/lib/db";
 
 // An API handler.
 // Called when we visit http://localhost:3000/api/posts
-// Note that this can handle both GET and POST requests!
+// Note that this can handle any request method type, including both GET and POST requests!
 export default async function handler(req, res) {
   try {
     const client = await clientPromise;
@@ -18,21 +18,8 @@ export default async function handler(req, res) {
       case "GET":
         const result = await db.collection("posts").find().toArray();
         return res.status(200).json(result);
-      // If req is a post request, extract the author and body fields
-      // and create a new document in the MongoDB database
-      case "POST":
-        console.log("POST request received");
-        const body = req.body;
-        console.log(body);
-        if (!body.author || !body.title || !body.body)
-          return res
-            .status(400)
-            .json({ message: "Missing required fields author, title, body" });
-            const dbRequest = await db.collection("posts").insertOne(body);
-        // We send a "success!" HTTP response
-        return res
-          .status(201)
-          .json({ message: "Created Successfully", id: dbRequest.insertedId });
+      // ***TODO: Insert the request body into the database.***
+      // Return a response with status code 200 if successful, or 401 if a field is missing.
       default:
         // If req is neither a post nor a get request, send an error HTTP response back.
         return res.status(405).json({ message: "Method not allowed" });

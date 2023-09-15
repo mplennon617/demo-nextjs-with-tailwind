@@ -1,4 +1,3 @@
-import Post from "@/components/Post";
 import Head from "next/head";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -8,12 +7,7 @@ import { useEffect, useState } from "react";
 // This is our NewPost component. Since this file is named new.js,
 // Next.js renders this component when visiting http://localhost:3000/new/
 export default function NewPost() {
-  // Declare our state variables:
-  // - `body`, `author`, and `title` state variables change based on the corresponding textbox input.
-  // - The `error` state variable is a boolean flag that we set to true if anything goes wrong.
-  const [body, setBody] = useState("");
-  const [author, setAuthor] = useState("");
-  const [title, setTitle] = useState("");
+  // ***TODO: Declare additional state variables to capture the data in each text box.***
   const [error, setError] = useState(false);
 
   // Next.js hook for redirecting to other pages in the application
@@ -21,32 +15,11 @@ export default function NewPost() {
 
   // handleSubmit function. Called from the Submit button's onClick() event.
   const handleSubmit = async () => {
-    // Send a POST request to the server API to insert the new post data.
-    try {
-      const data = {
-        body: body,
-        author: author,
-        title: title,
-      };
-      console.log(data);
-      const res = await fetch("/api/posts", {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-      console.log(res);
-      // If the HTTP response is successful, we extract the data (in JSON format)
-      // and update our posts state variable with the data.
-      if (res.status === 200) {
-        const data = await res.json();
-        setPosts(data);
-      }
-    } catch (e) {
-      // If the HTTP response fails, it will throw an exception.
-      // We catch it, and update the state variable to let the user know something went wrong.
-      setError(true);
-    }
-    console.log("push(\"/\");");
+    console.log("handleSubmit called");
+    // ***TODO: Using fetch, send a POST request to the API.***
+    // Place the body, author, and title into a JSON object to send back.
+    
+    // ***TODO: Uncomment below when done***
     // push("/");
   };
 
@@ -64,6 +37,8 @@ export default function NewPost() {
           {/* An HTML form. Contains 3 text boxes (<input>, type="text") and their labels.y
             Note the onChange() event handlers that update the state variables above.
           */}
+
+          {/* ***TODO: Add event handlers for the form textboxes and buttons.*** */}
           <form>
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -76,7 +51,6 @@ export default function NewPost() {
               id="author"
               placeholder="Author"
               type="text"
-              onChange={(e) => setAuthor(e.target.value)}
             ></input>
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -89,7 +63,6 @@ export default function NewPost() {
               id="title"
               placeholder="Title"
               type="text"
-              onChange={(e) => setTitle(e.target.value)}
             ></input>
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -103,20 +76,13 @@ export default function NewPost() {
               id="post"
               placeholder="Post"
               type="text"
-              onChange={(e) => setBody(e.target.value)}
             ></textarea>
           </form>
           {/* Submit and Cancel buttons. Note the onClick event handlers. */}
-          <button
-            onClick={handleCancel}
-            className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 mr-2 rounded"
-          >
+          <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 mr-2 rounded">
             Cancel
           </button>
-          <button
-            onClick={handleSubmit}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded"
-          >
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-2 rounded">
             Post
           </button>
         </div>
