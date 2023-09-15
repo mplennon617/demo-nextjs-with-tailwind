@@ -20,6 +20,7 @@ export default async function handler(req, res) {
         return res.status(200).json(result);
       // ***TODO: Insert the request body into the database.***
       // Return a response with status code 200 if successful, or 401 if a field is missing.
+      //      For reference: { message: "Created Successfully", id: dbRequest.insertedId }
       default:
         // If req is neither a post nor a get request, send an error HTTP response back.
         return res.status(405).json({ message: "Method not allowed" });
