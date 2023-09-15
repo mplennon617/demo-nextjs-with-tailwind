@@ -38,16 +38,14 @@ export default function NewPost() {
       // If the HTTP response is successful, we extract the data (in JSON format)
       // and update our posts state variable with the data.
       if (res.status === 200) {
-        const data = await res.json();
-        setPosts(data);
+        console.log("Post successfully created!")
       }
     } catch (e) {
       // If the HTTP response fails, it will throw an exception.
       // We catch it, and update the state variable to let the user know something went wrong.
       setError(true);
     }
-    console.log("push(\"/\");");
-    // push("/");
+    push("/");
   };
 
   // handleCancel function. Called from the Cancel button's onClick() event.
