@@ -53,15 +53,20 @@ At this point, you are good to go for the workshop! See you there!
 # Additional References
 
 * Next.js 13
-    * Amazing [video](https://www.youtube.com/watch?v=NgayZAuTgwM&t=347s) by Web Dev Simplified: https://www.youtube.com/watch?v=NgayZAuTgwM&t=347s
-    * [CodeBase](https://github.com/WebDevSimplified/n...) (You can use this as a starter project): https://github.com/WebDevSimplified/n...
+    * [Video](https://www.youtube.com/watch?v=NgayZAuTgwM&t=347s) 
+        * FYI: Web Dev Simplified YT Channel is a fantastic resource for learning web design
+    * [CodeBase](https://github.com/WebDevSimplified/n...) 
+        * You can use this as a starter project
     * It's a new version of Next.js that came out last year, and it's pretty sweet...
-    * There's a lot of changes, but one of the most notable changes is *server side components.* With Next.js 13, you can create frontend components that render on the server side. The server sends static HTML/CSS/JS to the client.
+    * There's a lot of changes, but one of the most notable changes is *server side components.* With Next.js 13, you can create frontend components that render on the server side. The server sends static HTML/CSS/JS to the client. You can also directly interact with server infrastructure (e.g. a database) from server side components.
 
 * Tailwind Documentation
-    *
+
+    * [Link](https://v2.tailwindcss.com/docs)
 
 * Deploying your Next.js application on Vercel
-    * Video: https://www.youtube.com/watch?v=2HBIzEx6IZA
-    * Vercel is a website hosting service that allows you to instantly deploy websites on the cloud. 
-    * Since Next.js is made by the same company as Vercel, Next.js integrates with Vercel very well. A great option for deploying your HackSMU app.
+    * [Video](https://www.youtube.com/watch?v=2HBIzEx6IZA)
+    * From Next.js developers:
+    >The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+    >Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
