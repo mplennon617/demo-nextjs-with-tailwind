@@ -1,5 +1,6 @@
 import Post from "@/components/Post";
 import Head from "next/head";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 // This is our Home component.
@@ -8,14 +9,16 @@ export default function Home() {
   // Declare our state variables:
   // - The `posts` state variable will be populated with the data from the API.
   // - The `body` and `author` state variables are set to whatever the user enters in the text boxes.
-  // - The `error` state variable is a flag that we set to true if anything goes wrong.
+  // - The `error` state variable is a boolean flag that we set to true if anything goes wrong.
   const [posts, setPosts] = useState([]);
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("");
   const [error, setError] = useState(false);
 
-  // handleLoad function. Called from the useEffect()
+  // handleLoad function. Called from the useEffect().
+  // Note: fetch(...) is an async function, which means we must make handleLoad async as well.
   const handleLoad = async () => {
+    // Send a GET request to the server API to fetch all the post data.
     try {
       const res = await fetch("/api/posts", {
         method: "GET",
@@ -50,15 +53,21 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="md:container mx-auto">
-        <div className="text-2xl text-center my-4">Blog Post App</div>
-        {/* TODO: Button should route to /new */}
-        {/* TODO: Remind yourself how routers work in Next.js! */}
-        <button className="float-right">New Post</button>
-         {/* Here, posts?.map iterates through each post, 
+        <div className="text-2xl text-center my-4">Simple Social App</div>
+        {/* Link to the New Post page. Using Tailwind.css, we make the Link look like a button. */}
+        <Link
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right"
+          href="/new"
+        >
+          New Post
+        </Link>
+        {/* Here, posts?.map iterates through each post, 
          and generates a Post component with the current post data. */}
-        {posts?.map((post, index) => (
-          <Post key={index} post={post} />
-        ))}
+        {posts.length > 0 ? (
+          posts?.map((post, index) => <Post key={index} post={post} />)
+        ) : (
+          <p className="text-center">No posts yet!</p>
+        )}
         {error && <h1 className="text-red-100">An error occurred.</h1>}
       </main>
     </>
