@@ -47,25 +47,29 @@ For this workshop, you will read and write to your own MongoDB Database. This po
 2. "Start Free" > Create an Account
 3. After you're signed in, click `+Create`
 4. Fill in the information as shown below and click `Create` at the bottom of the page. 
+![Create DB](./public/img/readme-1.png)
     * **IMPORTANT:** Make sure you name your database `webdesign-workshop` !!
-5. You will be taken to the Quickstart page. Select `Username and Password` and enter a username and password as shown below. Select `Create User`
+5. You will be taken to the Quickstart page. Select `Username and Password` and enter the username and password of your choice. Select `Create User`
 6. Select `My Local Environment` and click on `Add My Current IP Address`
 7. Click `Finish and Close`
 
 *At this point you have successfully created a MongoDB Database cluster deployment! Now we need to connect to the Database from our web application.*
+![Create DB](./public/img/readme-2.png)
 
-8. Open the cloned `hacksmuv-webdev` application.
+8. In VSCode: Open the cloned `hacksmuv-webdev` application.
 9. Inside the root directory `hacksmuv-webdev` you will see a file named `.env.local.example.` rename it to `.env.local`. This is where we will place our DB connection string.
 10. Go back to the MongoDB console. In the Overview tab, click `Connect` then select `Drivers`
+![Create DB](./public/img/readme-3.png)
 11. Find `Add your connection string into your application code.` Copy the URL and place it into `.env.local`. Replace `<password>` with the password you defined in step 5. Example:
 
     ```
-    MONGODB_URI=mongodb+srv://username:password@webdesign-workshop.oynsgim.mongodb.net/?retryWrites=true&w=majority
+    MONGODB_URI=mongodb+srv://username:password123@webdesign-workshop.oynsgim.mongodb.net/?retryWrites=true&w=majority
     ```
 
 *At this point you should be able to connect to your database! We'll test that, but before that we need to add a Collection and insert some sample data.*
 
 12. Select `Add Data`. Find `Create Database on Atlas` and click `Start`
+![Create DB](./public/img/readme-4.png)
 13. Fill in the Database name and Collection Name as shown below
     * Insert the following into the optional `Insert JSON` textbox:
 
@@ -77,12 +81,13 @@ For this workshop, you will read and write to your own MongoDB Database. This po
     }
     ```
 
-14. Click `Create Database`
+14. Click `Create Database`. You should see a database console with a document containing the data you just inserted.
 15. Hover over your new document and click `Clone Document`. This is just so we have multiple documents.
 16. Run your application from the terminal: `npm run dev`
 17. Navigate to `http://localhost:3000/testdb`. If you see one of your posts, you are done!
+![Create DB](./public/img/readme-5.png)
 
-***If this step fails, let me know at the beginning of the workshop and I can give you a spare connection string for*** `.env.local`.
+***If you had trouble setting up MongoDB, let me know at the beginning of the workshop and I can give you a spare connection string for*** `.env.local`.
 
 ### Start Coding!
 At this point, you are good to go for the workshop! See you there!
