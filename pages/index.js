@@ -8,11 +8,8 @@ import { useEffect, useState } from "react";
 export default function Home() {
   // Declare our state variables:
   // - The `posts` state variable will be populated with the data from the API.
-  // - The `body` and `author` state variables are set to whatever the user enters in the text boxes.
   // - The `error` state variable is a boolean flag that we set to true if anything goes wrong.
   const [posts, setPosts] = useState([]);
-  const [body, setBody] = useState("");
-  const [author, setAuthor] = useState("");
   const [error, setError] = useState(false);
 
   // handleLoad function. Called from the useEffect().
