@@ -91,10 +91,6 @@ For this workshop, you will read and write to your own MongoDB Database. This po
 ### Start Coding!
 At this point, you are good to go for the workshop! See you there!
 
-# Workshop Materials
-
-* Code Repository: https://github.com/mplennon617/hacksmuv-webdev.git
-
 # Additional Technology Not Covered
 
 ### Next.js 13
