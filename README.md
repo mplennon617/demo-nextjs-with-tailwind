@@ -10,6 +10,8 @@ You can access the completed code by running `git checkout endofsession`.
 
 # Setup (Do prior to the Workshop)
 
+If you want to code along, complete the setup in full prior to the workshop.
+
 ## Prerequisites
 You must have the following things installed on your laptop prior to the workshop for the interactive coding portion:
 * **Node.js** (Installation: https://nodejs.org/en/download/current) 
@@ -35,7 +37,7 @@ We need to get our Next.js application up and running.
 2. Install dependencies: `npm install` 
     * Note: You need Node.js to `npm install`.
 3. Run the Application: `npm run dev`
-4. Navigate to `localhost:3000`. If you see "Simple Social App" at the top of your screen, you are done!
+4. Navigate to `http://localhost:3000`. If you see "Simple Social App" at the top of your screen, you are done!
 
 ### MongoDB
 
@@ -78,7 +80,7 @@ For this workshop, you will read and write to your own MongoDB Database. This po
 14. Click `Create Database`
 15. Hover over your new document and click `Clone Document`. This is just so we have multiple documents.
 16. Run your application from the terminal: `npm run dev`
-17. Navigate to `localhost:3000/testdb`. If you see one of your posts, you are done!
+17. Navigate to `http://localhost:3000/testdb`. If you see one of your posts, you are done!
 
 ***If this step fails, let me know at the beginning of the workshop and I can give you a spare connection string for*** `.env.local`.
 
