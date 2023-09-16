@@ -25,7 +25,7 @@ You must have the following things installed on your laptop prior to the worksho
 
 ### General
 1. Open a command prompt (cmd.exe on Windows; Terminal on Mac/Linux)
-2. Clone the repository: `git clone https://github.com/mplennon617/hacksmuv-webdev.git`.
+2. Clone the repository: `git clone https://github.com/mplennon617/hacksmuv-webdev.git`
 3. Open the cloned codebase on your IDE
     * in VSCode you can do this straight from the terminal: `code .` (Don't forget the period)
 
