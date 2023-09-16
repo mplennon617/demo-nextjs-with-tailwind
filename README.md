@@ -17,7 +17,6 @@ You must have the following things installed on your laptop prior to the worksho
 * **Node.js** (Installation: https://nodejs.org/en/download/current) 
     * (check if you have this by running `node -v` in your command prompt)
 * **Git** (Installation: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-* **MongoDB Community Edition** (Installation: https://docs.mongodb.com/manual/administration/install-community/)
 * **A code editor or IDE** (VSCode, Sublime Text, Atom, etc.)
     * For this workshop, I will be using [VSCode.](https://code.visualstudio.com/download)
 
