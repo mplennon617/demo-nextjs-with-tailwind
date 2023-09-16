@@ -10,8 +10,6 @@ export default function Home() {
   // - The `body` and `author` state variables are set to whatever the user enters in the text boxes.
   // - The `error` state variable is a boolean flag that we set to true if anything goes wrong.
   const [posts, setPosts] = useState([]);
-  const [body, setBody] = useState("");
-  const [author, setAuthor] = useState("");
   const [error, setError] = useState(false);
 
   // handleLoad function. Called from the useEffect().
@@ -56,15 +54,15 @@ export default function Home() {
         >
           New Post
         </Link>
-
-        {/* ***TODO: Map through every post fetched from the database (instead of just one).*** */}
+        {
+          // ***TODO: Map through every post fetched from the database (instead of just one).***
+        }
         {posts[0] ? (
           <>
             {/* HTML for a single post */}
             <div className="bg-stone-700 w-[50rem] mx-auto p-4 mb-4 rounded">
               <div className="text-white text-xl font-bold mb-4">
                 <h2 className="text-white text-2xl font-bold">
-                  {" "}
                   "{posts[0].title}" by {posts[0].author}
                 </h2>
               </div>

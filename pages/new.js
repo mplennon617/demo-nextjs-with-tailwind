@@ -39,7 +39,9 @@ export default function NewPost() {
             Note the onChange() event handlers that update the state variables above.
           */}
 
-          {/* ***TODO: Add event handlers for the form textboxes and buttons.*** */}
+          {
+            // ***TODO: Add event handlers for the form textboxes and buttons.*** 
+          }
           <form>
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
