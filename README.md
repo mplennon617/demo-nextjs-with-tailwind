@@ -32,7 +32,7 @@ You must have the following things installed on your laptop prior to the worksho
 
 We need to get our Next.js application up and running.
 
-1. Go back to your command prompt. Make sure you are in your root directory (`[...]/webdev-workshop`). Run combinations of the commands `pwd`, `ls`, and `cd [...]` to navigate there.
+1. Go back to your command prompt. Make sure you are in your root directory (`[...]/hacksmuv-webdev`). Run combinations of the commands `pwd`, `ls`, and `cd [...]` to navigate there.
 2. Install dependencies: `npm install` 
     * Note: You need Node.js to `npm install`.
 3. Run the Application: `npm run dev`
