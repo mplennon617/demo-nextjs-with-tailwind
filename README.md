@@ -1,4 +1,5 @@
-# Web Development Workshop: HackSMU 2020
+# Web Development Workshop: HackSMU V
+
 This repository holds the materials and code for the intro to web development workshop @ HackSMU V (Fall 2023). In this workshop, we will cover how to create a simple full-stack blog web application using `Next.js 12` and `MongoDB`.
 
 For the sake of time, there is an incomplete (initial) version of the code, which we will use in the demo and build up to a completed project. The completed version is also included in this repository for anyone who wants to come back and take a look. 
