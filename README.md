@@ -10,7 +10,7 @@ You can access the completed code by running `git checkout endofsession`.
 
 # Setup (Do prior to the Workshop)
 
-If you want to code along, complete the setup in full prior to the workshop.
+If you want to code along, complete the setup in full prior to the workshop. Set aside at least 30 minutes.
 
 ## Prerequisites
 You must have the following things installed on your laptop prior to the workshop for the interactive coding portion:
